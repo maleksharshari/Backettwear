@@ -1,50 +1,81 @@
-# Welcome to your Expo app 👋
+# Backettwear
+An e-commerce application project
+## 1. Introduction
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### 1.1 Purpose
 
-## Get started
+This document specifies the functional and non-functional requirements for **Backettwear**, a mobile e-commerce application designed for the sale of clothing and accessories. This document serves as a guide for developers, designers, and stakeholders.
 
-1. Install dependencies
+### 1.2 Scope
 
-   ```bash
-   npm install
-   ```
+Backettwear will allow users to:
 
-2. Start the app
+- Browse and search for clothing products.
+- Create and manage user accounts.
+- Add or remove products from a shopping cart.
+- Complete purchases
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 2. System Description
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 2.1 System Overview
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Backettwear is a **React Native** mobile application that enables users to shop for clothing and accessories. The system includes user account management, a product catalog, a shopping cart, and secure checkout capabilities.
 
-## Get a fresh project
+### 2.2 System Architecture
 
-When you're ready, run:
+- **Frontend:** React Native with TypeScript.
+- **Authentication:** Firebase Authentication.
+- **Database:** Firebase Firestore (implied for product and user data storage).
 
-```bash
-npm run reset-project
-```
+---
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 3. Functional Requirements
 
-## Learn more
+### 3.1 User Authentication
 
-To learn more about developing your project with Expo, look at the following resources:
+- **FR1.1:** Users shall be able to create new accounts using email and password.
+- **FR1.2:** Users shall be able to log in with valid credentials.
+- **FR1.3:** The system shall validate user credentials against Firebase Authentication.
+- **FR1.4:** The system shall display meaningful error messages upon failed login attempts.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 3.2 Product Management
 
-## Join the community
+- **FR2.1:** The system shall display products with name, price, image, and description.
+- **FR2.2:** Products shall be organized into categories for easy browsing.
+- **FR2.3:** Users shall be able to view detailed information for each product.
 
-Join our community of developers creating universal apps.
+### 3.3 Shopping Cart
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **FR3.1:** Users shall be able to add products to their shopping cart.
+- **FR3.2:** The system shall increment the product quantity when the same product is added multiple times.
+- **FR3.3:** Users shall be able to remove individual products from their cart.
+- **FR3.4:** The system shall calculate and display the total price for items in the cart.
+
+---
+
+## 4. Non-Functional Requirements
+
+### 4.1 Performance
+
+- **NFR1.1:** The application shall load the product listings within 2 seconds under normal network conditions.
+- **NFR1.2:** Cart operations (add, remove) shall complete within 1 second.
+
+### 4.2 Security
+
+- **NFR2.1:** User authentication shall be securely handled using Firebase Authentication.
+- **NFR2.2:** User passwords shall never be stored or transmitted in plain text.
+
+### 4.3 Usability
+
+- **NFR3.1:** The user interface shall be intuitive and conform to modern mobile design patterns.
+- **NFR3.2:** The application shall maintain responsive design across a variety of device screen sizes.
+
+---
+
+## 5. System Constraints
+
+- The application shall be developed using **React Native** with **TypeScript**.
+- **Firebase Authentication** shall be used for all user login and registration processes.
+- The application shall be compatible with both **iOS** and **Android** platform
