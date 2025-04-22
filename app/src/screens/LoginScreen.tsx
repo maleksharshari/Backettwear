@@ -93,7 +93,7 @@ const LoginScreen = () => {
                     disabled={isLoading}
                 >
                     {isLoading ? (
-                        <ActivityIndicator color="#fff" />
+                        <ActivityIndicator color="#fff" testID="loading-indicator" />
                     ) : (
                         <Text style={styles.loginButtonText}>
                             {isSignUp ? 'Sign Up' : 'Login'}
